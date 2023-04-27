@@ -17,11 +17,9 @@ import java.time.LocalDate;
 @Entity
 public class Sportsman extends AppUser {
     @NotNull
-    @Column(nullable = false)
     private String name;
 
     @NotNull
-    @Column(nullable = false)
     private String surname;
 
     private String patronymic;
@@ -29,6 +27,6 @@ public class Sportsman extends AppUser {
     private LocalDate birthday;
 
     @NotNull
-    @Column(nullable = false, unique = true)
+    @Column(unique = true)
     private Integer document;
 }

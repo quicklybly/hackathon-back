@@ -25,7 +25,8 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        //TODO add roles and cors
+        //TODO add roles
+        //TODO validate events
         http
                 .csrf().disable()
                 .cors().and()
@@ -39,7 +40,7 @@ public class SecurityConfig {
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeHttpRequests()
                 .requestMatchers("/auth/**", "/mail/**", "/swagger-ui/**", "/api-docs/**",
-                        "/events/tags").permitAll()
+                         "/events/**").permitAll()
                 .anyRequest().authenticated();
         return http.build();
     }

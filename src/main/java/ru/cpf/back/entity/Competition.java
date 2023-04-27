@@ -29,7 +29,7 @@ public class Competition {
     private LocalDate dateStart;
 
     @Column(name = "date_end", nullable = false)
-    private LocalDate date_end;
+    private LocalDate dateEnd;
 
     private String description;
 

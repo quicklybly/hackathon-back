@@ -13,10 +13,9 @@ import ru.cpf.back.exception.AppException;
 
 import java.io.IOException;
 
-@RequiredArgsConstructor
 @Component
 public class AuthEntryPoint implements AuthenticationEntryPoint {
-    private final ObjectMapper mapper;
+    private final ObjectMapper mapper = new ObjectMapper();
 
     @Override
     public void commence(HttpServletRequest request,
