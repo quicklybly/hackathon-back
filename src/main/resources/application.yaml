@@ -1,0 +1,33 @@
+settings:
+  server:
+    port: ${SERVER_PORT}
+  db:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASS}
+
+server:
+  port: ${settings.server.port}
+  servlet:
+    context-path: /api/events
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${settings.db.url}
+    username: ${settings.db.username}
+    password: ${settings.db.password}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /api-docs
