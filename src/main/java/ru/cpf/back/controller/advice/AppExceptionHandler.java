@@ -16,6 +16,7 @@ public class AppExceptionHandler {
     public ResponseEntity<ErrorDto> handleAppException(AppException exception) {
         HttpStatus status = switch (exception.getCode()) {
             case USER_NOT_FOUND -> HttpStatus.NOT_FOUND;
+            case USER_UNAUTHORIZED -> HttpStatus.UNAUTHORIZED;
         };
         String code = exception.getCode().toString();
         String message = exception.getMessage();

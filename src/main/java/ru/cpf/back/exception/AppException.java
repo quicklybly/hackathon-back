@@ -18,6 +18,8 @@ public class AppException extends RuntimeException {
 
     public enum CODE {
         USER_NOT_FOUND("User with such id not found"),
+
+        USER_UNAUTHORIZED("User unauthorized"),
         ;
         final String codeDescription;
 

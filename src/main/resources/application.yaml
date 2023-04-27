@@ -9,7 +9,7 @@ settings:
 server:
   port: ${settings.server.port}
   servlet:
-    context-path: /api/events
+    context-path: /api
 
 spring:
   datasource:
@@ -19,7 +19,7 @@ spring:
     password: ${settings.db.password}
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
@@ -31,3 +31,7 @@ springdoc:
     path: /swagger-ui.html
   api-docs:
     path: /api-docs
+
+jwt:
+  secret: ${SECRET_KEY}
+  time-to-expire: 86400000
