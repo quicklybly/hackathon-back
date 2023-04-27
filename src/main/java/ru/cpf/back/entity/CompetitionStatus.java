@@ -16,6 +16,7 @@ import ru.cpf.back.entity.enums.CompetitionStatusEnum;
 public class CompetitionStatus {
     @NotNull
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull

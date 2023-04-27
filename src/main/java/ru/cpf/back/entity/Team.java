@@ -20,6 +20,7 @@ import java.util.List;
 public class Team {
     @NotNull
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull

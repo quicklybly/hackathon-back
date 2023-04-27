@@ -18,6 +18,7 @@ import java.util.List;
 public class Competition {
     @NotNull
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull

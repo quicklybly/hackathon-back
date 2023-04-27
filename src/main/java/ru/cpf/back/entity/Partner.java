@@ -8,6 +8,7 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @Builder
+@DiscriminatorValue("partner")
 @Entity
 public class Partner extends AppUser {
 }

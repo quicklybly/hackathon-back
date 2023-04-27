@@ -15,6 +15,7 @@ import ru.cpf.back.entity.enums.RoleEnum;
 @Entity
 public class Role {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Enumerated(EnumType.STRING)

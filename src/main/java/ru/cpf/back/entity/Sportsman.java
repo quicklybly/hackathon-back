@@ -13,6 +13,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@DiscriminatorValue("sportsman")
 @Entity
 public class Sportsman extends AppUser {
     @NotNull

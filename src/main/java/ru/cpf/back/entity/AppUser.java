@@ -23,6 +23,7 @@ import java.util.List;
 public class AppUser implements UserDetails {
     @NotNull
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
