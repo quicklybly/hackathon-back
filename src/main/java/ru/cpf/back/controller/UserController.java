@@ -1,12 +1,11 @@
 package ru.cpf.back.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.cpf.back.controller.openapi.UserApi;
+import ru.cpf.back.dto.SportsmanDto;
 import ru.cpf.back.dto.UserDto;
 import ru.cpf.back.entity.AppUser;
 import ru.cpf.back.service.UserService;
@@ -31,8 +30,16 @@ public class UserController implements UserApi {
         return userService.getAllUsers();
     }
 
+    @Operation(summary = "Get profile by Jwt")
     @GetMapping("/profile")
     public UserDto getProfile(@AuthenticationPrincipal AppUser user) {
         return userService.getProfile(user);
+    }
+
+    @Operation(summary = "Edit profile by Jwt")
+    @PutMapping("/profile/sportsman")
+    public UserDto editProfileSportsman(@AuthenticationPrincipal AppUser user,
+                               @RequestBody SportsmanDto sportsmanDto) {
+        return userService.editProfileSportsman(user, sportsmanDto);
     }
 }

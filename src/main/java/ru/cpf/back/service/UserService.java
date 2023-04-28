@@ -2,6 +2,7 @@ package ru.cpf.back.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.cpf.back.dto.SportsmanDto;
 import ru.cpf.back.dto.UserDto;
 import ru.cpf.back.entity.AppUser;
 import ru.cpf.back.exception.AppException;
@@ -47,5 +48,20 @@ public class UserService {
             }
         }
         throw AppException.CODE.USER_NOT_FOUND.get();
+    }
+
+    public SportsmanDto editProfileSportsman(AppUser user, SportsmanDto sportsmanDto) {
+        if (user == null) {
+            throw AppException.CODE.USER_UNAUTHORIZED.get();
+        }
+        var sportsman = userMapper.sportsmanDtoToEntity(sportsmanDto);
+        sportsman.setOrganization(sportsmanDto.getOrganization());
+        sportsman.setId(user.getId());
+        sportsman.setRole(user.getRole());
+        sportsman.setUsername(user.getUsername());
+        sportsman.setEmail(user.getEmail());
+        sportsman.setPassword(user.getPassword());
+        sportsman = userRepository.save(sportsman);
+        return userMapper.sportsmanEntityToDto(sportsman);
     }
 }

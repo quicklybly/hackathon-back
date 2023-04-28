@@ -22,4 +22,5 @@ public class SportsmanDto extends UserDto {
     private LocalDate birthday;
     @NotNull
     private String document;
+    private String organization;
 }

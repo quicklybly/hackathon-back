@@ -3,7 +3,6 @@ package ru.cpf.back.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -27,4 +26,6 @@ public class Sportsman extends AppUser {
 
     @Column(unique = true)
     private String document;
+
+    private String organization;
 }
