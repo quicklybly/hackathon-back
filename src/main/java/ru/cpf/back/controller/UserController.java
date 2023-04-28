@@ -44,8 +44,6 @@ public class UserController implements UserApi {
         return userService.getProfile(user);
     }
 
-
-
     @Operation(summary = "Edit profile by Jwt")
     @PutMapping("/profile/sportsman")
     public UserDto editProfileSportsman(@AuthenticationPrincipal AppUser user,
