@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.cpf.back.controller.openapi.UserApi;
 import ru.cpf.back.dto.SportsmanDto;
 import ru.cpf.back.dto.UserDto;
+import ru.cpf.back.dto.VoteRequest;
 import ru.cpf.back.entity.AppUser;
 import ru.cpf.back.service.UserService;
 
@@ -28,6 +29,13 @@ public class UserController implements UserApi {
     @GetMapping("/")
     public List<UserDto> getAllUsers() {
         return userService.getAllUsers();
+    }
+
+
+    @PostMapping("/vote")
+    public Long voteForCompetitionByCompetitionId(@AuthenticationPrincipal AppUser user,
+                                                 @RequestBody VoteRequest voteRequest) {
+        return userService.voteForCompetitionByCompetitionId(user, voteRequest);
     }
 
     @Operation(summary = "Get profile by Jwt")

@@ -15,11 +15,12 @@ public class AppExceptionHandler {
     @ExceptionHandler(AppException.class)
     public ResponseEntity<ErrorDto> handleAppException(AppException exception) {
         HttpStatus status = switch (exception.getCode()) {
-            case USER_NOT_FOUND -> HttpStatus.NOT_FOUND;
+            case USER_NOT_FOUND, COMPETITION_NOT_FOUND -> HttpStatus.NOT_FOUND;
             case USER_UNAUTHORIZED -> HttpStatus.UNAUTHORIZED;
             case USERNAME_IS_TAKEN,
                     EMAIL_IS_TAKEN -> HttpStatus.CONFLICT;
             case SERVER_ERROR -> HttpStatus.INTERNAL_SERVER_ERROR;
+            case INVALID_VOTE_VALUE -> HttpStatus.BAD_REQUEST;
         };
         String code = exception.getCode().toString();
         String message = exception.getMessage();
