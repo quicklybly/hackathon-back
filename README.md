@@ -3,14 +3,6 @@
 Kinder is a simple social network created with Vue, Spring and PostgreSQL.
 Информационная система Федерации спортивного программирования - это удобный портал для агрегирования событий ФСП, созданная на Vue, Spring и PostgreSQL.
 
-## Содержание
-
-* [Features](#Особенности)
-* [Technologies Used](#Стек использованных технологий)
-* [Project status](#Текущее состояние проекта)
-* [License](#Лицензия)
-* [Contact](#Контакты)
-
 ## Особенности
 
 * Аутентификация пользователей с использованием Spring Security
