@@ -1,26 +1,18 @@
 package ru.cpf.back.dto;
 
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
 
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public class SportsmanDto {
-    private Long id;
-    @NotNull
-    private String username;
-    @NotNull
-    private String password;
-    @NotNull
-    private String email;
-    private RoleDto role;
+public class SportsmanDto extends UserDto {
     @NotNull
     private String name;
     @NotNull

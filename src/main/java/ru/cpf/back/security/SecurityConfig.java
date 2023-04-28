@@ -40,7 +40,7 @@ public class SecurityConfig {
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeHttpRequests()
                 .requestMatchers("/auth/**", "/mail/**", "/swagger-ui/**", "/api-docs/**",
-                         "/events/**").permitAll()
+                         "/events/**", "/users/**").permitAll()
                 .anyRequest().authenticated();
         return http.build();
     }
