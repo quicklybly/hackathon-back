@@ -37,4 +37,11 @@ This project is licensed under the terms of the **MIT** license.
 
 ## Контакты
 
-Created by [@quicklybly](https://t.me/quicklybly) - feel free to contact me!
+Created by 
+* [@quicklybly](https://t.me/quicklybly)
+* [@putin_p_a](https://t.me/putin_p_a)
+* [@oakerlpyhovpcpspslwlwl](https://t.me/oakerlpyhovpcpspslwlwl)
+* [@zdratut](https://t.me/zdratut)
+* [@yelenaSheina](https://t.me/yelenaSheina)
+
+можете связаться с нами по будням с 9:00 по 20:00!
