@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,26 +16,23 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@SuperBuilder
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "role",
+@DiscriminatorColumn(name = "role_discr",
         discriminatorType = DiscriminatorType.STRING)
 @Table(name = "app_user")
 @Entity
 public class AppUser implements UserDetails {
-    @NotNull
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
     @Column(nullable = false, unique = true)
     private String username;
 
-    @NotNull
     @Column(nullable = false)
     private String password;
 
-    @NotNull
     @Column(nullable = false, unique = true)
     private String email;
 

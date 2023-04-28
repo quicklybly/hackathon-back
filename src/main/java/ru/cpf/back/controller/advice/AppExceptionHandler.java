@@ -17,6 +17,9 @@ public class AppExceptionHandler {
         HttpStatus status = switch (exception.getCode()) {
             case USER_NOT_FOUND -> HttpStatus.NOT_FOUND;
             case USER_UNAUTHORIZED -> HttpStatus.UNAUTHORIZED;
+            case USERNAME_IS_TAKEN,
+                    EMAIL_IS_TAKEN -> HttpStatus.CONFLICT;
+            case SERVER_ERROR -> HttpStatus.INTERNAL_SERVER_ERROR;
         };
         String code = exception.getCode().toString();
         String message = exception.getMessage();

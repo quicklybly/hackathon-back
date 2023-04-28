@@ -5,6 +5,7 @@ import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
 
@@ -12,21 +13,18 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @DiscriminatorValue("sportsman")
 @Entity
 public class Sportsman extends AppUser {
-    @NotNull
     private String name;
 
-    @NotNull
     private String surname;
 
     private String patronymic;
 
     private LocalDate birthday;
 
-    @NotNull
     @Column(unique = true)
-    private Integer document;
+    private String document;
 }

@@ -18,8 +18,12 @@ public class AppException extends RuntimeException {
 
     public enum CODE {
         USER_NOT_FOUND("User with such id not found"),
+        USERNAME_IS_TAKEN("User with such username already exists"),
+        EMAIL_IS_TAKEN("User with such email already exists"),
 
         USER_UNAUTHORIZED("User unauthorized"),
+
+        SERVER_ERROR("Server error"),
         ;
         final String codeDescription;
 

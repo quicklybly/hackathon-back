@@ -25,4 +25,6 @@ public class SportsmanCompetition {
     @MapsId("competitionId")
     @JoinColumn(name = "id_competition")
     private Competition competition;
+
+    private Integer vote;
 }
