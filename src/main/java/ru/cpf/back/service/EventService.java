@@ -6,10 +6,12 @@ import ru.cpf.back.dto.CompetitionDto;
 import ru.cpf.back.dto.TagDto;
 import ru.cpf.back.dto.TypeDto;
 import ru.cpf.back.entity.Competition;
+import ru.cpf.back.exception.AppException;
 import ru.cpf.back.mapper.CompetitionMapper;
 import ru.cpf.back.mapper.CompetitionTypeMapper;
 import ru.cpf.back.mapper.TagMapper;
 import ru.cpf.back.repository.CompetitionRepository;
+import ru.cpf.back.repository.SportsmanCompetitionRepository;
 import ru.cpf.back.repository.TagRepository;
 import ru.cpf.back.repository.TypeRepository;
 
@@ -22,6 +24,7 @@ public class EventService {
     private final TagRepository tagRepository;
     private final CompetitionRepository competitionRepository;
     private final TypeRepository typeRepository;
+    private final SportsmanCompetitionRepository sportsmanCompetitionRepository;
     private final TagMapper tagMapper;
     private final CompetitionMapper competitionMapper;
     private final CompetitionTypeMapper competitionTypeMapper;
@@ -34,10 +37,17 @@ public class EventService {
     }
 
     public List<CompetitionDto> getCompetitions() {
-        return competitionRepository.findAll()
+        List<CompetitionDto> competitionDtos = competitionRepository.findAll()
                 .stream()
                 .map(competitionMapper::entityToDto)
                 .collect(Collectors.toList());
+        for (CompetitionDto dto : competitionDtos) {
+            Long competitionId = dto.getId();
+            Long sumVotes = sportsmanCompetitionRepository.getSumVotesByCompetitionId(competitionId);
+            sumVotes = sumVotes == null ? 0 : sumVotes;
+            dto.setSumVotes(sumVotes);
+        }
+        return competitionDtos;
     }
 
     public List<TypeDto> getTypes() {

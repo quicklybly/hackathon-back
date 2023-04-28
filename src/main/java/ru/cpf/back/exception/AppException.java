@@ -21,6 +21,9 @@ public class AppException extends RuntimeException {
         USERNAME_IS_TAKEN("User with such username already exists"),
         EMAIL_IS_TAKEN("User with such email already exists"),
 
+        COMPETITION_NOT_FOUND("Competition with such id not found"),
+        INVALID_VOTE_VALUE("Vote value is invalid"),
+
         USER_UNAUTHORIZED("User unauthorized"),
 
         SERVER_ERROR("Server error"),

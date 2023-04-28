@@ -23,4 +23,5 @@ public class CompetitionDto {
     private LocalDate dateStart;
     private LocalDate dateEnd;
     private List<TagDto> tags;
+    private Long sumVotes;
 }

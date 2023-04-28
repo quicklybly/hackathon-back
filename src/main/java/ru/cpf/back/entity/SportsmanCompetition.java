@@ -27,4 +27,11 @@ public class SportsmanCompetition {
     private Competition competition;
 
     private Integer vote;
+
+    public SportsmanCompetition(Sportsman sportsman, Competition competition, int vote) {
+        this.id = new SportsmanCompetitionKey(sportsman.getId(), competition.getId());
+        this.sportsman = sportsman;
+        this.competition = competition;
+        this.vote = vote;
+    }
 }
