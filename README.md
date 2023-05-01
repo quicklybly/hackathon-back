@@ -1,7 +1,8 @@
 # Информационная система Федерации спортивного программирования 
 
-Kinder is a simple social network created with Vue, Spring and PostgreSQL.
-Информационная система Федерации спортивного программирования - это удобный портал для агрегирования событий ФСП, созданная на Vue, Spring и PostgreSQL.
+Проект выполнен в качестве решения кейса для хакатона от ФСП. [Полная информация](https://www.zavodit.ru/ru/calendar/event/25) <br>
+Информационная система Федерации спортивного программирования - это удобный портал для агрегирования событий ФСП, созданная на Vue, Spring и PostgreSQL. <br>
+Этот репозиторий содержить backend часть приложения. [Frontend часть](https://github.com/quicklybly/hackathon-front)
 
 ## Особенности
 
@@ -15,33 +16,21 @@ Kinder is a simple social network created with Vue, Spring and PostgreSQL.
 
 * Java 17
 * Spring boot 3.0.6
-* PostgreSQL 14.6
-* Vue 3
-* Vuetify 3.0.0 as a component library
-* Vue-router 4
+* PostgreSQL 15.2
 
-## Текущее состояние проекта
-
-Project is: in progress <br>
-Проект находится в активной разработке <br>
-To-do:
-
-* Migrate from Spring-data-jdbc to jpa (in progress)
-* Add comments/likes support
-* Integrate chat system
 
 ## Лицензия
 
-> You can check out the full license [here](https://github.com/quicklybly/kinder/blob/master/LICENSE)
-This project is licensed under the terms of the **MIT** license.
+> Этот проект распростаняется под лицензией **MIT**.
+Вы можете ознакомиться с полным текстом лицензии [здесь](https://github.com/quicklybly/hackathon-back/blob/main/LICENSE).
 
 ## Контакты
 
-Created by 
+Created by colle d'équipe
 * [@quicklybly](https://t.me/quicklybly)
 * [@putin_p_a](https://t.me/putin_p_a)
 * [@oakerlpyhovpcpspslwlwl](https://t.me/oakerlpyhovpcpspslwlwl)
 * [@zdratut](https://t.me/zdratut)
 * [@yelenaSheina](https://t.me/yelenaSheina)
 
-можете связаться с нами по будням с 9:00 по 20:00!
+Feel free to contact. 
