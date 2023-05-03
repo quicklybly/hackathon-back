@@ -31,7 +31,7 @@ public class UserController implements UserApi {
         return userService.getAllUsers();
     }
 
-
+    @Operation(summary = "Vote for competition")
     @PostMapping("/vote")
     public Long voteForCompetitionByCompetitionId(@AuthenticationPrincipal AppUser user,
                                                  @RequestBody VoteRequest voteRequest) {

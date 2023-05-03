@@ -2,7 +2,6 @@ package ru.cpf.back.controller.openapi;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import ru.cpf.back.dto.SportsmanDto;
 import ru.cpf.back.dto.UserDto;
 
 import java.util.List;

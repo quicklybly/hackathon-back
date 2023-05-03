@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import ru.cpf.back.dto.LoginRequest;
 import ru.cpf.back.dto.LoginResponse;
 import ru.cpf.back.dto.SportsmanDto;
-import ru.cpf.back.dto.UserDto;
 import ru.cpf.back.entity.AppUser;
 import ru.cpf.back.entity.enums.RoleEnum;
 import ru.cpf.back.exception.AppException;
