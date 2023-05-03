@@ -26,6 +26,7 @@ public class SportsmanCompetition {
     @JoinColumn(name = "id_competition")
     private Competition competition;
 
+    @Column(nullable = false)
     private Integer vote;
 
     public SportsmanCompetition(Sportsman sportsman, Competition competition, int vote) {
