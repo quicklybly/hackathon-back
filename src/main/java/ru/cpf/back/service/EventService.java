@@ -58,9 +58,10 @@ public class EventService {
     }
 
     public VoteResponse getVote(Long id, AppUser user) {
-        var sportsmanCompetition = sportsmanCompetitionRepository
+        var sportsmanCompetitionOptional = sportsmanCompetitionRepository
                 .findByCompetitionIdAndSportsmanId(id, user.getId());
-        var vote = sportsmanCompetition.getVote();
+        var vote = sportsmanCompetitionOptional.isPresent() ?
+                sportsmanCompetitionOptional.get().getVote() : 0;
         return new VoteResponse(vote);
     }
 }
