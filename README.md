@@ -29,7 +29,6 @@
 Created by colle d'équipe
 * [@quicklybly](https://t.me/quicklybly)
 * [@putin_p_a](https://t.me/putin_p_a)
-* [@oakerlpyhovpcpspslwlwl](https://t.me/oakerlpyhovpcpspslwlwl)
 * [@zdratut](https://t.me/zdratut)
 * [@yelenaSheina](https://t.me/yelenaSheina)
 
